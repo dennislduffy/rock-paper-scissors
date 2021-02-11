@@ -7,15 +7,15 @@
         let computerChoice;
        
         if(play < .33){
-            computerChoice = "Rock";
+            computerChoice = "rock";
         }
 
         else if(play < .66){
-            computerChoice = "Paper";
+            computerChoice = "paper";
         }
 
         else{
-            computerChoice = "Scissors";
+            computerChoice = "scissors";
         }
 
         return(computerChoice);
@@ -33,35 +33,35 @@
 
     
         
-    /*
-    function game(){
+
         let playerInput = playerChoice();
         let computerChoice = computerPlay();
         
-        if(playerInput = "rock"){
+        if(playerInput === "rock"){
             switch(computerChoice){
                 case "rock":
-                    alert("Draw!")
+                    console.log("Draw!");
                     break;
                 case "paper":
-                    alert("Paper beats rock! You lose!")
+                    console.log("Paper beats rock! You lose!");
                     break;
                 case "scissors": 
-                    alert("Rock beats scissors! You win!")
+                    console.log("Rock beats scissors! You win!");
                     break;
             }
+            
         }   
             
-        else if(playerInput = "paper"){
+        else if(playerInput === "paper"){
            switch(computerChoice){
                 case "rock": 
-                    text = "Paper beats rock! You win!"
+                    console.log("Paper beats rock! You win!");
                     break;
                 case "paper": 
-                    text = "Draw!"
+                    console.log("Draw!");
                     break;
                 case "scissors":
-                    text = "Scissors beats paper! You lose!"
+                    console.log("Scissors beats paper! You lose!");
                     break;
             }
         }
@@ -69,17 +69,17 @@
         else{
             switch(computerChoice){
                 case "rock":
-                    text = "Rock beats scissors! You lose!"
+                    console.log("Rock beats scissors! You lose!");
                     break;
                 case "paper":
-                    text = "Scissors beats paper! You win!"
+                    console.log("Scissors beats paper! You win!");
                     break;
                 case "scissors":
-                    text = "Draw!"
+                    console.log("Draw!");
                     break;
             }
         }
-        */
-}
+        
+
 
 </script>
