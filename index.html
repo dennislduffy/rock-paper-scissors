@@ -31,11 +31,9 @@
         }
     }
 
-    
-        
 
-        let playerInput = playerChoice();
-        let computerChoice = computerPlay();
+        
+    function playRound(playerInput, computerChoice){
         
         if(playerInput === "rock"){
             switch(computerChoice){
@@ -79,7 +77,19 @@
                     break;
             }
         }
+    }
         
+    function playGame(){
+
+
+        for(i = 0; i < 5; i++){
+
+            let playerInput = playerChoice();
+            let computerChoice = computerPlay();
+            playRound(playerInput, computerChoice)
+
+        }
+    }
 
 
 </script>
