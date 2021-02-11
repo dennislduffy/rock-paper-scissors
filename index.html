@@ -2,15 +2,14 @@
     /*Computer selects*/
     
     function computerPlay(){
-        let play = Math.random();
-        
+
         let computerChoice;
        
-        if(play < .33){
+        if(Math.random() < .33){
             computerChoice = "rock";
         }
 
-        else if(play < .66){
+        else if(Math.random() < .66){
             computerChoice = "paper";
         }
 
@@ -32,19 +31,24 @@
     }
 
 
-        
+    /*Function that compares user input vs. computer choice.*/
     function playRound(playerInput, computerChoice){
+
+        let outcome;
         
         if(playerInput === "rock"){
             switch(computerChoice){
                 case "rock":
                     console.log("Draw!");
+                    outcome = "draw";
                     break;
                 case "paper":
                     console.log("Paper beats rock! You lose!");
+                    outcome = "computerWin";
                     break;
                 case "scissors": 
                     console.log("Rock beats scissors! You win!");
+                    outcome = "playerWin";
                     break;
             }
             
@@ -54,12 +58,15 @@
            switch(computerChoice){
                 case "rock": 
                     console.log("Paper beats rock! You win!");
+                    outcome = "playerWin";
                     break;
                 case "paper": 
                     console.log("Draw!");
+                    outcome = "draw";
                     break;
                 case "scissors":
                     console.log("Scissors beats paper! You lose!");
+                    outcome = "computerWin";
                     break;
             }
         }
@@ -68,25 +75,50 @@
             switch(computerChoice){
                 case "rock":
                     console.log("Rock beats scissors! You lose!");
+                    outcome = "computerWin";
                     break;
                 case "paper":
                     console.log("Scissors beats paper! You win!");
+                    outcome = "playerWin";
                     break;
                 case "scissors":
                     console.log("Draw!");
+                    outcome = "draw";
                     break;
             }
         }
+
+        return outcome;
     }
-        
+    
+    /*Function that runs the game and keeps score in the console*/
     function playGame(){
 
+        let playerScore = 0;
+        let computerScore = 0;
 
         for(i = 0; i < 5; i++){
 
             let playerInput = playerChoice();
             let computerChoice = computerPlay();
-            playRound(playerInput, computerChoice)
+            let outcome = playRound(playerInput, computerChoice);
+
+            if(outcome === "playerWin"){
+                playerScore++;
+                console.log("Player Score: " + playerScore);
+                console.log("Computer Score: " + computerScore);
+            }
+
+            if(outcome === "computerWin"){
+                computerScore++;
+                console.log("Player Score: " + playerScore);
+                console.log("Computer Score: " + computerScore);
+            }
+            
+            if(outcome === "draw"){
+                console.log("Player Score: " + playerScore);
+                console.log("Computer Score: " + computerScore);
+            }
 
         }
     }
